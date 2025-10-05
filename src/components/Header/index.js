@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
     <header>
-      <Link className="logo" to="/">
-        Box Office
-      </Link>
-      <Link className="Favoritos" to="/favoritos">
-        Meus Favoritos
-      </Link>
+      <div className="limite">
+        <Link className="logo" to="/">
+          Box Office
+        </Link>
+        <Link className="favoritos" to="/favoritos">
+          Meus Favoritos
+        </Link>
+      </div>
     </header>
   );
 }

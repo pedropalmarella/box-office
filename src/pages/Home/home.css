@@ -1,0 +1,96 @@
+.lista-filmes {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Define 3 colunas de tamanhos iguais */
+  gap: 20px; /* Espaçamento entre os itens */
+  max-width: 1200px; /* Ajuste para acomodar melhor 3 colunas */
+  margin: 14px auto;
+}
+
+.lista-filmes article {
+  width: 100%;
+  border-top-left-radius: 12px;
+  background-color: #7c3aed; /* Adiciona um fundo para destacar os itens */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.lista-filmes article:hover {
+  transform: scale(1.05);
+  cursor: cell;
+}
+
+.caixa-titulo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+  padding: 2px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  background-color: #7c3aed; /* Mantém o fundo roxo */
+  color: #fff; /* Define a cor do texto */
+  border: none; /* Remove qualquer borda */
+}
+
+.lista-filmes strong {
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  display: block;
+  background-color: transparent; /* Remove o fundo preto */
+  margin: 0; /* Remove margens indesejadas */
+  padding: 0; /* Remove espaçamento interno */
+}
+
+.lista-filmes img {
+  max-height: 300px; /* Ajusta a altura máxima para manter a proporção */
+  object-fit: fit;
+  display: block;
+  width: 100%; /* Garante que a imagem ocupe toda a largura */
+}
+
+.lista-filmes a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  font-size: 18px;
+  background-color: #7c3aed;
+  text-decoration: none;
+  color: #fff;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  transition: all 0.3s;
+}
+
+.lista-filmes a:hover {
+  background-color: #1a1a1a;
+  cursor: pointer;
+}
+
+.ver-mais-container {
+  display: flex;
+  justify-content: center;
+}
+
+.ver-mais {
+  color: #fff;
+  font-size: 28px;
+  text-decoration: none;
+  border-radius: 7px;
+  padding: 7px;
+  transition: all 0.3s;
+  background-color: #7c3aed;
+  margin: 14px 0;
+}
+
+.ver-mais:hover {
+  background-color: black;
+  cursor: pointer;
+}
