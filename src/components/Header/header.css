@@ -1,0 +1,22 @@
+header {
+  background-color: blueviolet;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  height: 70px;
+}
+
+a {
+  color: #fff;
+  font-size: 28px;
+  text-decoration: none;
+  background-color: aqua;
+  border-radius: 7px;
+  padding: 7px;
+  transition: all 0.3s;
+}
+
+a:hover {
+  background-color: black;
+}
