@@ -8,38 +8,32 @@ function Filme() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const [filmes, setFilmes] = useState([]);
+  const [filme, setFilme] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function buscaFilmes() {
-      await api
-        .get(`/movie/${id}`, {
-          params: {
-            api_key: "0508f250b7e076b70ff6a3c62880c301",
-            language: "pt-BR",
-          },
-        })
-        .then((resposta) => {
-          setFilmes(resposta.data);
-          setLoading(false);
-        })
-        .catch(() => {
-          navigate("/", { replace: true });
-          return;
-        });
+    async function buscaFilme() {
+      try {
+        const resposta = await api.get(`/movie/${id}`);
+
+        setFilme(resposta.data);
+      } catch (error) {
+        console.log("ERRO AO BUSCAR FILME:", error);
+        navigate("/", { replace: true });
+      } finally {
+        setLoading(false);
+      }
     }
 
-    buscaFilmes();
+    buscaFilme();
   }, [navigate, id]);
 
   function favoritarFilme() {
     const minhaLista = localStorage.getItem("@favfilmes");
-
     let filmesSalvos = JSON.parse(minhaLista) || [];
 
     const hasFilme = filmesSalvos.some(
-      (filmeSalvo) => filmeSalvo.id === filmes.id
+      (filmeSalvo) => filmeSalvo.id === filme.id
     );
 
     if (hasFilme) {
@@ -47,16 +41,15 @@ function Filme() {
       return;
     }
 
-    filmesSalvos.push(filmes);
+    filmesSalvos.push(filme);
     localStorage.setItem("@favfilmes", JSON.stringify(filmesSalvos));
-    console.log(filmesSalvos);
     toast.success("Filme favoritado com sucesso!");
   }
 
   if (loading) {
     return (
       <div className="loading">
-        <h2>Carregando filmes...</h2>
+        <h2>Carregando detalhes...</h2>
       </div>
     );
   }
@@ -66,23 +59,23 @@ function Filme() {
       <div className="detalhe-container">
         <div className="poster-container">
           <img
-            src={`https://image.tmdb.org/t/p/original/${filmes.backdrop_path}`}
-            alt={filmes.title}
+            src={`https://image.tmdb.org/t/p/original/${filme.backdrop_path}`}
+            alt={filme.title}
           />
         </div>
 
         <div className="info-box">
-          <h1>{filmes.title}</h1>
+          <h1>{filme.title}</h1>
           <h3>Sinopse</h3>
-          <span>{filmes.overview}</span>
-          <strong>Nota: {filmes.vote_average.toFixed(1)} / 10</strong>
+          <span>{filme.overview}</span>
+          <strong>Nota: {filme.vote_average?.toFixed(1)} / 10</strong>
           <div className="area-buttons">
             <button onClick={favoritarFilme}>FAVORITAR</button>
             <button>
               <a
                 target="blank"
                 rel="external"
-                href={`https://youtube.com/results?search_query=${filmes.title} Trailer`}
+                href={`https://youtube.com/results?search_query=${filme.title} Trailer`}
               >
                 TRAILER
               </a>

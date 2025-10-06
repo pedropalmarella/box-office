@@ -10,31 +10,28 @@ function Home() {
 
   useEffect(() => {
     async function buscaFilmes() {
-      const configBusca = {
-        params: {
-          api_key: "0508f250b7e076b70ff6a3c62880c301",
-          language: "pt-BR",
-          page: pagina,
-        },
-      };
+      try {
+        const resposta = await api.get("/movie/now_playing", {
+          params: {
+            page: pagina,
+          },
+        });
 
-      const resposta = await api
-        .get("/movie/now_playing", configBusca)
-        .then((resposta) => {
-          setLoading(false);
-          setFilmes((prevFilmes) => [
-            ...prevFilmes,
-            ...resposta.data.results.slice(0, 9),
-          ]);
-          console.log("DEU CERTO!");
-        })
-        .catch(() => console.log("ERRO NA API"));
+        setFilmes((prevFilmes) => [
+          ...prevFilmes,
+          ...resposta.data.results.slice(0, 9),
+        ]);
+      } catch (error) {
+        console.error("ERRO NA API:", error);
+      } finally {
+        setLoading(false);
+      }
     }
 
     buscaFilmes();
   }, [pagina]);
 
-  if (loading) {
+  if (loading && filmes.length === 0) {
     return (
       <div className="loading">
         <h2>Carregando filmes...</h2>
