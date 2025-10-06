@@ -5,4 +5,9 @@
   align-items: center;
   height: calc(100vh - 70px);
   gap: 10px;
+  color: #fff;
+}
+
+.erro a {
+  color: #fff;
 }

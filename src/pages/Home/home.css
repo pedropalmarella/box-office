@@ -3,63 +3,61 @@
   justify-content: center;
   align-items: center;
   color: #fff;
+  min-height: 100vh;
 }
 
 .home-container {
   background-color: #1a1a1a;
+  width: 100%;
+}
+
+.caixa-titulo {
+  height: 70px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  background-color: #e50914;
 }
 
 .lista-filmes {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 14px 0;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 .lista-filmes article {
   width: 100%;
-  border-top-left-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .lista-filmes article:hover {
   transform: scale(1.05);
-  cursor: cell;
-}
-
-.caixa-titulo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 60px;
-  padding: 2px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  background-color: #e50914;
-  border: none;
+  cursor: pointer;
 }
 
 .lista-filmes strong {
   color: #fff;
   text-align: center;
-  font-size: 20px;
-  display: block;
-  background-color: transparent;
-  margin: 0;
-  padding: 0;
+  font-size: 1.2rem;
+  padding: 10px 8px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .lista-filmes img {
-  max-height: 300px;
-  object-fit: fit;
-  display: block;
   width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
 }
 
 .lista-filmes a {
@@ -67,40 +65,18 @@
   align-items: center;
   justify-content: center;
   padding: 10px 0;
-  font-size: 18px;
+  font-size: 1.1rem;
   background-color: #fff;
   text-decoration: none;
   color: #000;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   transition: all 0.3s;
-  border: solid 3px #e50914;
-  border-top: none; /* Remove a borda superior */
+  font-weight: bold;
+  margin-top: auto;
 }
 
 .lista-filmes a:hover {
   background-color: #e50914;
-  cursor: pointer;
   color: #fff;
-}
-
-.ver-mais-container {
-  display: flex;
-  justify-content: center;
-}
-
-.ver-mais {
-  color: #fff;
-  font-size: 28px;
-  text-decoration: none;
-  border-radius: 7px;
-  padding: 7px;
-  transition: all 0.3s;
-  background-color: #e50914;
-  margin: 14px 0;
-}
-
-.ver-mais:hover {
-  background-color: #1a1a1a;
-  cursor: pointer;
 }

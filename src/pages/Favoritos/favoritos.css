@@ -1,14 +1,15 @@
 .bg {
   background-color: #1a1a1a;
   width: 100%;
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
 }
 
 .meus-filmes {
-  padding-top: 14px;
+  max-width: 900px;
+  width: 100%;
+  padding: 14px 20px;
   margin: 0 auto;
   color: #fff;
-  width: 900px;
 }
 
 .meus-filmes h1 {
@@ -16,13 +17,6 @@
   margin-bottom: 20px;
   color: #fff;
   text-align: center;
-}
-
-.meus-filmes span {
-  display: block;
-  margin-bottom: 20px;
-  font-size: 1.2rem;
-  color: #bbb;
 }
 
 .meus-filmes ul {
@@ -37,27 +31,37 @@
   background-color: #1f1f1f;
   padding: 15px;
   margin-bottom: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-.meus-filmes li span {
+.meus-filmes li > span {
   font-size: 1.2rem;
   font-weight: bold;
+  word-break: break-word;
+  flex: 1;
 }
 
 .meus-filmes li div {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
-.meus-filmes li a {
+.meus-filmes li a,
+.meus-filmes li button {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
-  border: 1px solid #fff;
-  padding: 5px 10px;
+  padding: 8px 12px;
   border-radius: 5px;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.meus-filmes li a {
+  border: 1px solid #fff;
 }
 
 .meus-filmes li a:hover {
@@ -67,14 +71,28 @@
 
 .meus-filmes li button {
   background-color: #e50914;
-  color: #fff;
   border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
 .meus-filmes li button:hover {
   background-color: #b00610;
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .meus-filmes li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .meus-filmes li div {
+    width: 100%;
+  }
+
+  .meus-filmes li a,
+  .meus-filmes li button {
+    flex-grow: 1;
+    text-align: center;
+  }
 }

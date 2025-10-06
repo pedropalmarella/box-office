@@ -1,82 +1,125 @@
 .bg {
   background-color: #1a1a1a;
+  color: #fff; /* Garante que todo texto padrão seja branco */
 }
 
 .detalhe-container {
   display: flex;
-  flex-direction: row;
-  gap: 20px;
-  color: #fff;
-  height: calc(100vh - 70px);
+  flex-direction: row; /* Layout em linha para telas grandes */
+  gap: 30px; /* Aumentei um pouco o espaço */
   max-width: 1200px;
   margin: 0 auto;
   align-items: center;
+  /* A altura é um mínimo para preencher a tela, mas pode crescer se precisar */
+  min-height: calc(100vh - 70px);
+  padding: 20px; /* Adiciona um respiro nas laterais */
 }
 
 .poster-container {
-  width: 60%;
-  height: 65%;
+  flex: 1; /* Ocupa uma fração do espaço */
+  max-width: 450px; /* Limita a largura máxima da imagem */
 }
 
 .poster-container img {
   width: 100%;
-  height: 100%;
-  border-radius: 10px;
+  height: auto; /* Altura automática para manter proporção */
+  aspect-ratio: 2 / 3; /* Proporção de poster */
   object-fit: cover;
+  border-radius: 10px;
+  display: block; /* Remove espaço extra abaixo da imagem */
 }
 
 .info-box {
+  flex: 1.5; /* Ocupa uma fração e meia, dando mais espaço ao texto */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 40%;
 }
 
 .info-box h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
 
 .info-box h3 {
   margin-top: 20px;
+  margin-bottom: 5px; /* Ajuste de margem */
   font-size: 1.5rem;
 }
 
 .info-box span {
-  margin: 10px 0;
   line-height: 1.6;
+  font-size: 1.1rem;
 }
 
 .info-box strong {
-  margin-top: 10px;
+  margin-top: 20px; /* Mais espaço acima da nota */
   font-size: 1.2rem;
 }
 
 .area-buttons {
   display: flex;
   flex-direction: row;
-  gap: 10px;
-  margin-top: 20px;
+  gap: 15px; /* Aumentei o espaço entre botões */
+  margin-top: 25px;
 }
 
 .area-buttons button {
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-size: 1rem;
+  font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   background-color: #e50914;
   color: white;
-  transition: background-color 0.3s;
+  transition: transform 0.2s, background-color 0.3s;
   outline: none;
 }
 
-.area-buttons button:hover {
-  background-color: #0056b3;
+.area-buttons button a {
+  text-decoration: none;
+  color: #fff;
 }
 
-.area-buttons a {
-  text-decoration: none;
-  color: white;
-  background-color: transparent;
+.area-buttons button:hover {
+  background-color: #c40812; /* Vermelho mais escuro */
+  transform: scale(1.05); /* Efeito de crescimento */
+}
+
+/* ============================================== */
+/* ✨ A MÁGICA DA RESPONSIVIDADE COMEÇA AQUI ✨ */
+/* ============================================== */
+
+@media (max-width: 768px) {
+  .detalhe-container {
+    flex-direction: column; /* Altera para layout em coluna */
+    text-align: center; /* Centraliza o texto para visual mobile */
+    min-height: auto; /* Deixa a altura ser definida pelo conteúdo */
+    padding: 20px 15px;
+  }
+
+  .poster-container {
+    width: 100%; /* Ocupa toda a largura */
+    max-width: 350px; /* Define um tamanho máximo razoável */
+    margin-bottom: 20px; /* Adiciona espaço abaixo da imagem */
+  }
+
+  .info-box {
+    width: 100%; /* Ocupa toda a largura */
+    align-items: center; /* Centraliza itens como os botões */
+  }
+
+  .info-box h1 {
+    font-size: 2rem; /* Diminui um pouco a fonte do título */
+  }
+
+  .area-buttons {
+    justify-content: center; /* Garante a centralização dos botões */
+    width: 100%;
+  }
+
+  .area-buttons button {
+    flex-grow: 1; /* Faz os botões crescerem para ocupar o espaço */
+    max-width: 200px;
+  }
 }

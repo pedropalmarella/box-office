@@ -6,9 +6,12 @@ function Erro() {
     <div className="erro">
       <h1>Página não encontrada...</h1>
       <h2>Erro 404</h2>
-      <Link className="Home" to="/">
-        Home
-      </Link>
+      <span>
+        voltar para ->
+        <Link className="Home" to="/">
+          Home
+        </Link>
+      </span>
     </div>
   );
 }
