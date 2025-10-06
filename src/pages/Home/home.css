@@ -1,20 +1,28 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.home-container {
+  background-color: #1a1a1a;
+}
+
 .lista-filmes {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(
-    3,
-    1fr
-  ); /* Define 3 colunas de tamanhos iguais */
-  gap: 20px; /* Espaçamento entre os itens */
-  max-width: 1200px; /* Ajuste para acomodar melhor 3 colunas */
-  margin: 14px auto;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 0;
 }
 
 .lista-filmes article {
   width: 100%;
   border-top-left-radius: 12px;
-  background-color: #7c3aed; /* Adiciona um fundo para destacar os itens */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   transition: all 0.3s ease;
 }
@@ -33,26 +41,25 @@
   padding: 2px;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  background-color: #7c3aed; /* Mantém o fundo roxo */
-  color: #fff; /* Define a cor do texto */
-  border: none; /* Remove qualquer borda */
+  background-color: #e50914;
+  border: none;
 }
 
 .lista-filmes strong {
   color: #fff;
   text-align: center;
-  font-size: 22px;
+  font-size: 20px;
   display: block;
-  background-color: transparent; /* Remove o fundo preto */
-  margin: 0; /* Remove margens indesejadas */
-  padding: 0; /* Remove espaçamento interno */
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
 }
 
 .lista-filmes img {
-  max-height: 300px; /* Ajusta a altura máxima para manter a proporção */
+  max-height: 300px;
   object-fit: fit;
   display: block;
-  width: 100%; /* Garante que a imagem ocupe toda a largura */
+  width: 100%;
 }
 
 .lista-filmes a {
@@ -61,17 +68,20 @@
   justify-content: center;
   padding: 10px 0;
   font-size: 18px;
-  background-color: #7c3aed;
+  background-color: #fff;
   text-decoration: none;
-  color: #fff;
+  color: #000;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   transition: all 0.3s;
+  border: solid 3px #e50914;
+  border-top: none; /* Remove a borda superior */
 }
 
 .lista-filmes a:hover {
-  background-color: #1a1a1a;
+  background-color: #e50914;
   cursor: pointer;
+  color: #fff;
 }
 
 .ver-mais-container {
@@ -86,11 +96,11 @@
   border-radius: 7px;
   padding: 7px;
   transition: all 0.3s;
-  background-color: #7c3aed;
+  background-color: #e50914;
   margin: 14px 0;
 }
 
 .ver-mais:hover {
-  background-color: black;
+  background-color: #1a1a1a;
   cursor: pointer;
 }
