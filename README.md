@@ -44,6 +44,5 @@ Este projeto foi construído com as seguintes tecnologias e ferramentas:
 
 ## 🛠️ Configure as Variáveis de Ambiente:
 
-### Você precisará de uma chave de API do The Movie Database (TMDb). Você pode conseguir uma de graça registrando-se no site deles.
-### Na raiz do projeto, crie um arquivo chamado .env.local.
-### Dentro dele, adicione sua chave de API da seguinte forma: REACT_APP_TMDB_API_KEY=SUA_CHAVE_DA_API_AQUI
+Você precisará de uma chave de API do The Movie Database (TMDb). Você pode conseguir uma de graça registrando-se no site deles. Na raiz do projeto, crie um arquivo chamado .env.local. Dentro dele, adicione sua chave de API da seguinte forma: 
+### REACT_APP_TMDB_API_KEY=SUA_CHAVE_DA_API_AQUI
