@@ -39,3 +39,11 @@ Este projeto foi construído com as seguintes tecnologias e ferramentas:
   - [React Toastify](https://fkhadra.github.io/react-toastify/introduction/)
 - **Deploy:**
   - [Vercel](https://vercel.com/)
+ 
+---
+
+## 🛠️ Configure as Variáveis de Ambiente:
+
+1.Você precisará de uma chave de API do The Movie Database (TMDb). Você pode conseguir uma de graça registrando-se no site deles.
+2.Na raiz do projeto, crie um arquivo chamado .env.local.
+3.Dentro dele, adicione sua chave de API da seguinte forma: REACT_APP_TMDB_API_KEY=SUA_CHAVE_DA_API_AQUI
