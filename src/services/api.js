@@ -1,8 +1,6 @@
 import axios from "axios";
 
 const apiKey = process.env.REACT_APP_TMDB_API_KEY;
-// ADICIONE ESTA LINHA PARA O TESTE:
-console.log("🔑 Chave de API carregada no terminal:", apiKey);
 
 const api = axios.create({
   baseURL: "https://api.themoviedb.org/3",
