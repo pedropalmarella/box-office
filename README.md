@@ -6,7 +6,7 @@
 
 Um aplicativo web responsivo para explorar filmes em cartaz, ver detalhes e salvar seus favoritos em uma lista pessoal. O projeto foi desenvolvido como parte de um estudo prático de React e consumo de APIs.
 
-**🚀 Link para o site:** **[https://ppalmarella-dev-box-office.vercel.app/](https://ppalmarella-dev-box-office.vercel.app/)**
+**🚀 Link para testar:** **[https://ppalmarella-dev-box-office.vercel.app/](https://ppalmarella-dev-box-office.vercel.app/)**
 
 ---
 
